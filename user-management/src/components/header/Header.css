@@ -1,0 +1,31 @@
+.main_header {
+  position: sticky;
+  /* color: white; */
+  background: var(--secondary-bg);
+  padding: 20px 15px;
+  border-bottom: 2px solid dark;
+  box-shadow: rgba(48, 30, 103, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.header_items {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.app_details img {
+  width: 50px;
+}
+
+.panel {
+  display: flex;
+  font-weight: bold;
+}
+.panel svg {
+  font-size: 20px;
+  padding: 2px;
+}
+.panel .label {
+  margin-left: 10px;
+}

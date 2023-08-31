@@ -1,0 +1,36 @@
+
+
+.form_content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form_content label {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+
+.form_content input {
+	margin: 0 0 10px 0;
+	padding: 5px 0px 10px 5px;
+	display: block;
+	width: 100%;
+	border-radius: 8px;
+	font-size: 16px;
+	color: #261e20;
+	font-weight: bold;
+}
+
+
+.form_content input:focus {
+  outline: none;
+  background: #fad0ec;
+  border-color: #8b005d;
+}
+
+.form_content.err input{
+  background: salmon;
+  border: 2px solid red;
+}

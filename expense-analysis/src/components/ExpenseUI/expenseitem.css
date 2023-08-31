@@ -1,0 +1,66 @@
+.expense_wrapper {
+  margin: 20px 20px 20px 10px;
+  border: 2px solid #ffffff;
+  /* width: 15rem; */
+  height: 15rem;
+  padding: 1rem;
+  background: #00796b;
+  position: relative;
+}
+.date {
+  font-weight: bold;
+}
+.exp_title {
+  margin-top: 1.5rem;
+}
+.exp_amount {
+  margin: 1rem 0;
+  background: #ff4742;
+  border: 2px solid #ff4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  /* position related css*/
+  position: absolute;
+  width: 125px;
+  bottom: 0;
+  left: calc((100% - 125px) / 2);
+  margin: -18px 0;
+}
+
+.exp_amount:hover,
+.exp_amount:active {
+  background-color: #bf23ff;
+  background-position: 0 0;
+  color: #b2dfdb;
+}
+
+.exp_amount:active {
+  opacity: 0.5;
+}
+
+.date {
+  background: #cddc39;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  width: 75%;
+  margin: 0 auto;
+  color: #757575;
+  padding: 0.5rem;
+}

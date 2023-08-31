@@ -1,0 +1,11 @@
+.delete_button {
+  background: var(--accent-color);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.delete_button:hover {
+  cursor: pointer;
+  background: var(--hover-color);
+}

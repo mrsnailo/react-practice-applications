@@ -1,0 +1,27 @@
+body {
+  font-size: 16px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: #000000;
+}
+ul {
+  padding: 0;
+  margin: 10px 0;
+  list-style: none;
+}
+.app_body {
+  max-width: 500px;
+  margin: 10px auto;
+}
+
+.form__wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.no_content {
+  text-align: center;
+  color: #072d17;
+}

@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #000025;
+}
+
+html {
+  font-style: oblique;
+  font-size: 16px;
+}
+
+.App {
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.App-header {
+  margin-bottom: 3rem;
+}
+
+.Application_body {
+  max-width: 1024px;
+  margin: 20px auto;
+  background: #212121;
+  padding: 2rem;
+  height: 330px;
+}
+.ExpenseForm_container {
+  text-align: center;
+  height: auto;
+}
+
+.Expense_container {
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+.newExpenseWrapper .addButton {
+  border-style: none;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: teal;
+}
+
+.newExpenseWrapper .addButton:hover{
+  background: #000c45;
+
+}

@@ -1,0 +1,13 @@
+li {
+  padding: 2px 2px;
+  background: #B7102D;
+  margin: 4px 0;
+  color: #FFFFFF;
+  text-align: center;
+  border-radius: 8px;
+}
+
+li:hover{
+
+  cursor: pointer;
+}

@@ -1,0 +1,39 @@
+.form_controls {
+  text-align: left;
+  padding: 15px;
+}
+
+.form_control {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 10px 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form_action {
+  padding: 10px;
+  text-align: right;
+}
+
+.form_action button {
+  padding: 10px 15px;
+  background-color: tomato;
+  color: #ffffff;
+  border-style: none;
+  border-radius: 5px;
+  margin-left: 10px;
+
+
+}
+
+.form_action button:hover{
+
+  background: #000c45;
+  color: #FFF;
+}
+
+.validateText {
+  color: red;
+}

@@ -1,0 +1,22 @@
+.Expense_filter_wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Expense_filter_wrapper label {
+  font-size: 18px;
+  font-weight: semi-bold;
+}
+
+.Expense_filter_wrapper select {
+   background-color: #ffffff;
+  border: 2px solid teal;
+  border-radius: 5px;  
+  padding: 7px;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  color: teal;
+  line-height: inherit;
+} 

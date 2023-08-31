@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  color: var(--primary-text);
+}
+html {
+  font-size: 18px;
+}
+body {
+  background: var(--primary-bg);
+}
+section {
+  margin: 20px 0;
+}
+:root {
+  --primary-text: #b6eada;
+  --secondary-text: #5b8fb9;
+  --primary-bg: #03001c;
+  --secondary-bg: #301e67;
+  --accent-color: #009879;
+  --hover-color: #0f4e41;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* table styles  */
+
+.user_table {
+  border-collapse: collapse;
+  /* border-top-left-radius: 5px; */
+  /* border-top-left-radius: 5px; */
+  margin: 25px auto;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.user_table thead tr {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  text-align: left;
+}
+.user_table th,
+.user_table td {
+  padding: 15px 15px;
+}
+.user_table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+.user_table tbody tr:nth-of-type(even) {
+  background-color: var(--secondary-bg);
+}
+
+.user_table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--accent-color);
+}
