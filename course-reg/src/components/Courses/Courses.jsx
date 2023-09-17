@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Card from "../Card/card";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Courses = ({
   course_name,
@@ -12,13 +12,21 @@ const Courses = ({
   totalCredit,
 }) => {
   const [isSelected, setIsSelected] = useState(false);
-  const selectedCourse = {
-    courseName: course_name,
-    coursePrice: price,
-    coursesCredit: credit,
-  };
+  console.log(isSelected);
+
+  // Button click handler
+
   const clickHandler = () => {
+    setIsSelected(() => {
+      console.log(" function reference is ok ");
+      return true;
+    });
     const creditLim = totalCredit + parseInt(credit);
+    const selectedCourse = {
+      courseName: course_name,
+      coursePrice: price,
+      coursesCredit: credit,
+    };
     if (creditLim < 21) {
       onSelectCourse(selectedCourse);
       toast(`${course_name} was added`, {
@@ -31,21 +39,17 @@ const Courses = ({
         progress: undefined,
         theme: "light",
       });
-      setIsSelected(true);
     } else {
-      toast.error(
-        "Sorry Credit Limit will exceed",
-        {
-          position: "bottom-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        },
-      );
+      toast.error("Sorry Credit Limit will exceed", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
 

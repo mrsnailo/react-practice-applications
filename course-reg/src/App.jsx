@@ -27,6 +27,8 @@ const App = () => {
   };
   const clearCart = () => {
     updateCoursesSelected([]);
+    setTotalHour(0);
+    setTotalPrice(0);
     toast("Cart Cleared", {
       position: "bottom-right",
       autoClose: 1500,
@@ -49,7 +51,7 @@ const App = () => {
           <CoursesList
             jsonData={courseDataJson}
             totalCredit={totalHour}
-            passCourseToParent={handleSelectedData}
+            onSelectCourse={handleSelectedData}
           />
         </div>
         <div className="cart w-1/4">
