@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import the library
 import { library } from "@fortawesome/fontawesome-svg-core";
 
-// import your icons
+// import icons
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
@@ -18,7 +18,6 @@ const App = () => {
   const [coursesSelected, updateCoursesSelected] = useState([]);
   const [totalprice, setTotalPrice] = useState(0);
   const [totalHour, setTotalHour] = useState(0);
-  // For Cart Item Counter
   const handleSelectedData = (sCourse) => {
     // function to update Cart Items
     updateCoursesSelected((prevState) => {
@@ -68,7 +67,7 @@ const App = () => {
             onSelectCourse={handleSelectedData}
           />
         </div>
-        <div className="cart mx-auto w-4/5 md:w-1/3 lg:w-1/4">
+        <div className="cart sm:order-first mx-auto w-4/5 md:w-1/3 lg:w-1/4">
           <CourseCart
             selectedCourse={coursesSelected}
             hour={totalHour}

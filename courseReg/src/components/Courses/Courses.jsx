@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "../Card/card";
 import { notifyError } from "../Notify/Notify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -29,7 +29,6 @@ const Courses = ({
     };
     if (creditLim < 21) {
       onSelectCourse(selectedCourse);
-      // setIsSelected(true);
     } else {
       notifyError("Sorry, limit will exceed!");
     }
