@@ -1,14 +1,13 @@
-import React, { useRef } from "react";
+import React from "react";
 import Card from "../Card/card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import CartIcon from "../CartIcon/CartIcon";
+
 const CourseCart = ({ count, selectedCourse, price, hour, onReset }) => {
   let remHour = 20 - hour;
   const resetHandler = () => {
     onReset();
   };
-  // Scroll to cart
-
+ 
   return (
     <>
       <Card id="cart-section">
@@ -41,7 +40,6 @@ const CourseCart = ({ count, selectedCourse, price, hour, onReset }) => {
           </button>
         </div>
       </Card>
-      <CartIcon Count={count} />
     </>
   );
 };

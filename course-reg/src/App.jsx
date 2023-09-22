@@ -19,9 +19,8 @@ const App = () => {
   const [totalprice, setTotalPrice] = useState(0);
   const [totalHour, setTotalHour] = useState(0);
   // For Cart Item Counter
-  const count = coursesSelected.length;
   const handleSelectedData = (sCourse) => {
-    // function to update Cart Items 
+    // function to update Cart Items
     updateCoursesSelected((prevState) => {
       const currentSelcetions = [...prevState];
       currentSelcetions.push(sCourse);
@@ -36,12 +35,12 @@ const App = () => {
         {sCourse.courseName} was added
       </>,
     );
-    // update total price for selected course 
+    // update total price for selected course
     setTotalPrice((prevPrice) => {
       const newPrice = prevPrice + sCourse.coursePrice;
       return newPrice;
     });
-    // update total hour for selected course 
+    // update total hour for selected course
     setTotalHour((prevHour) => {
       const newHour = prevHour + parseInt(sCourse.coursesCredit);
       return newHour;
@@ -54,7 +53,7 @@ const App = () => {
     setTotalPrice(0);
     notify("Cart Cleared", "hi");
   };
-   
+
   return (
     <>
       <h2 className="text-center font-bold text-2xl mt-2">
@@ -71,7 +70,6 @@ const App = () => {
         </div>
         <div className="cart mx-auto w-4/5 md:w-1/3 lg:w-1/4">
           <CourseCart
-            count={count}
             selectedCourse={coursesSelected}
             hour={totalHour}
             price={totalprice}

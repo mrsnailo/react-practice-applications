@@ -1,7 +1,12 @@
 import React from "react";
 import Courses from "./Courses";
 
-const CoursesList = ({ onSelectCourse, jsonData,selectedCourse, totalCredit}) => {
+const CoursesList = ({
+  onSelectCourse,
+  jsonData,
+  selectedCourse,
+  totalCredit,
+}) => {
   const dataList = jsonData;
   return dataList.map((course, i) => {
     return (
