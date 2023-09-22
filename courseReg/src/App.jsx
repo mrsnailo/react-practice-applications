@@ -67,7 +67,7 @@ const App = () => {
             onSelectCourse={handleSelectedData}
           />
         </div>
-        <div className="cart sm:order-first mx-auto w-4/5 md:w-1/3 lg:w-1/4">
+        <div className="cart order-last sm:order-first mx-auto w-4/5 md:w-1/3 lg:w-1/4">
           <CourseCart
             selectedCourse={coursesSelected}
             hour={totalHour}
