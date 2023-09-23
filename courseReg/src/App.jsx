@@ -59,7 +59,7 @@ const App = () => {
         Course Registration
       </h2>
       <div className="course-container container mx-auto flex flex-col md:flex-row justify-center md:justify-between my-8 gap-6">
-        <div className="courses grid grid-cols-1 mx-auto md:grid-cols-2 lg:grid-cols-3 w-4/5 md:w-3/3 lg:w-3/4 gap-6">
+        <div className="courses grid grid-cols-1 mx-auto md:grid-cols-2 lg:grid-cols-3 w-4/5 md:w-3/3 lg:w-3/4 order-2 gap-6">
           <CoursesList
             jsonData={courseDataJson}
             totalCredit={totalHour}
@@ -67,7 +67,7 @@ const App = () => {
             onSelectCourse={handleSelectedData}
           />
         </div>
-        <div className="cart order-last sm:order-first mx-auto w-4/5 md:w-1/3 lg:w-1/4">
+        <div className="cart order-1 mx-auto w-4/5 md:w-1/3 lg:w-1/4">
           <CourseCart
             selectedCourse={coursesSelected}
             hour={totalHour}
