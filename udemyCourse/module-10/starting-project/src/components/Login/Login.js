@@ -11,9 +11,9 @@ const inputReducer = (state, action) => {
     case "EMAIL_INPUT":
       data = {
         email: action.value,
-        isValidEmail: null,
+        isValidEmail: action.value.includes("@"),
         password: state.password,
-        isValidPassword: null,
+        isValidPassword: ,
       };
 
       break;
@@ -65,7 +65,7 @@ const Login = (props) => {
       setFormIsValid(
         inputState.isValidEmail && inputState.isValidPassword
       );
-    }, 600);
+    }, 440);
 
     return () => {
       console.log("rnning cleanup");
