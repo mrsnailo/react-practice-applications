@@ -1,4 +1,4 @@
-import React, { useReducer, useState, useEffect } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 
 import Card from "../UI/Card/Card";
 import classes from "./Login.module.css";
@@ -13,7 +13,7 @@ const inputReducer = (state, action) => {
         email: action.value,
         isValidEmail: action.value.includes("@"),
         password: state.password,
-        isValidPassword: ,
+        isValidPassword: null,
       };
 
       break;
@@ -62,9 +62,7 @@ const Login = (props) => {
   useEffect(() => {
     const identifier = setTimeout(() => {
       console.log("Checking Form validity");
-      setFormIsValid(
-        inputState.isValidEmail && inputState.isValidPassword
-      );
+      setFormIsValid(inputState.isValidEmail && inputState.isValidPassword);
     }, 440);
 
     return () => {
@@ -77,7 +75,6 @@ const Login = (props) => {
   };
   const passwordChangeHandler = (event) => {
     dispatchInput({ type: "PASSWORD_INPUT", value: event.target.value });
-   
   };
 
   const validateEmailHandler = () => {
