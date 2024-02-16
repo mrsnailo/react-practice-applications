@@ -1,11 +1,11 @@
 import cover from "../../assets/meals.jpg";
 import HeaderCartButton from "./HeaderCartButton";
-const Header = () => {
+const Header = (props) => {
   return (
     <>
       <header className="z-10 header-items flex justify-between p-6 items-center bg-cyan-700 fixed w-full h-20 shadow-sm">
         <div className="title text-xl font-bold">React Food</div>
-        <HeaderCartButton />
+        <HeaderCartButton onClickCart={props.showCart} />
       </header>
       <div className="h-72 w-full overflow-hidden z-0">
         <img

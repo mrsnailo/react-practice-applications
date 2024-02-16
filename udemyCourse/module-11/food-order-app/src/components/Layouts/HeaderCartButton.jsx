@@ -1,9 +1,11 @@
 import CartIcon from "../Cart/CartIcon";
 
-const HeaderCartButton = () => {
+const HeaderCartButton = (props) => {
+
+
   return (
     <>
-      <button className="rounded-m bg-teal-500 shadow-sm flex justify-between gap-2">
+      <button onClick={props.onClickCart} className="rounded-m bg-teal-500 shadow-sm flex justify-between gap-2">
         <span className="w-6 h-6">
           <CartIcon />
         </span>
