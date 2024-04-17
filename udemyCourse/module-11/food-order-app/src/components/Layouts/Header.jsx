@@ -5,7 +5,7 @@ const Header = (props) => {
     <>
       <header className="z-10 header-items flex justify-between p-6 items-center bg-cyan-700 fixed w-full h-20 shadow-sm">
         <div className="title text-xl font-bold">React Food</div>
-        <HeaderCartButton onClickCart={props.showCart} />
+        <HeaderCartButton onClickCart={props.showCart}/>
       </header>
       <div className="h-72 w-full overflow-hidden z-0">
         <img
