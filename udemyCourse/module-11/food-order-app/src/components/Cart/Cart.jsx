@@ -2,26 +2,47 @@ import Modal from "../UI/Modal";
 import classes from "./Cart.module.css";
 import { useContext } from "react";
 import CartContext from "../../store/CartContext";
-import { CiSquareMinus } from "react-icons/ci";
-import { CiSquarePlus } from "react-icons/ci";
-
+import { IconContext } from "react-icons";
+import { IoAddCircleSharp } from "react-icons/io5";
+import { AiFillMinusCircle } from "react-icons/ai";
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+  const removeItemHandler = (id) => {
+    cartCtx.removeItem(id);
+  }
+  const addItemHandler = (item) => {
+   const fixAmt = {...item, amount: 1}
+    console.log(fixAmt)
+    cartCtx.addItem(fixAmt);
+  }
   const cartItems = (
     <ul>
-      {cartCtx.items.map((item) => (
-        <li
-          className="flex p-4 bg-slate-200 shadow-slate-400 m-1 rounded-lg justify-between"
-          key={item.id}
-        >
-          <div className="item-details flex text-lg font-bold items-center"><p className="mr-3">{item.name} </p><p className="amount border-2 p-2 border-black rounded"> &times; 1</p></div>
-          <div className="item-actions flex">
-            <p className="minus text-yellow-500 mx-2"><CiSquareMinus className=" w-7" /></p>
-            <p className="plus text-teal-800"><CiSquarePlus /></p>
-          </div>
-        </li>
-      ))}
+      <IconContext.Provider
+        value={{ color: "teal", className: "global-class-name", size: "2em" }}
+      >
+        {cartCtx.items.map((item) => (
+          <li
+            className="flex p-4 bg-slate-200 shadow-slate-400 m-1 rounded-lg justify-between items-center"
+            key={item.id}
+          >
+            <div className="item-details flex text-md font-bold items-center">
+              <p className="mr-3">{item.name} </p>
+              <p className="amount border-2 p-2 border-black rounded bg-orange-300">
+                &times; {item.amount}
+              </p>
+            </div>
+            <div className="item-actions flex cursor-pointer">
+              <p onClick={()=> removeItemHandler(item.id)} className="minus text-yellow-500 mx-2">
+                <AiFillMinusCircle />
+              </p>
+              <p onClick={()=> addItemHandler(item)} className="plus text-teal-800">
+                <IoAddCircleSharp />
+              </p>
+            </div>
+          </li>
+        ))}
+      </IconContext.Provider>
     </ul>
   );
   return (
