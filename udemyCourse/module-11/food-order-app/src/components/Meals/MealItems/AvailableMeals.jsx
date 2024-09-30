@@ -1,44 +1,35 @@
 import Card from "../../UI/Card";
 import IndividualMeal from "./IndividualMeal";
+import useFetch from "../../../hooks/useFetch";
+import MealLoader from "../../Loader/MealLoader"; // Assuming this is the correct import
+
 const AvailableMeals = () => {
-  const DUMMY_MEALS = [
-    {
-      id: "m1",
-      name: "Sushi",
-      description: "Finest fish and veggies",
-      price: 22.99,
-    },
-    {
-      id: "m2",
-      name: "Schnitzel",
-      description: "A german specialty!",
-      price: 16.5,
-    },
-    {
-      id: "m3",
-      name: "Barbecue Burger",
-      description: "American, raw, meaty",
-      price: 12.99,
-    },
-    {
-      id: "m4",
-      name: "Green Bowl",
-      description: "Healthy...and green...",
-      price: 18.99,
-    },
-  ];
+  const { data, loading: isLoading, error } = useFetch("https://react-http-655f1-default-rtdb.firebaseio.com/meals.json", { method: "GET" });
 
-  const MealItems = DUMMY_MEALS.map((meal) => (
-    <IndividualMeal
-      id={meal.id}
-      key={meal.id}
-      name={meal.name}
-      desc={meal.description}
-      price={meal.price}
-    />
-  ));
+  let MealItems;
+  if (isLoading) {
+    return (<MealLoader/>);
+  } else if (error) {
+    MealItems = <p className="text-red-500">Error fetching meals: {error.message}</p>;
+  } else if (data && data.length > 0) {
+    MealItems = data.map((meal) => (
+      <IndividualMeal
+        id={meal.id}
+        key={meal.id}
+        name={meal.name}
+        desc={meal.description}
+        price={meal.price}
+      />
+    ));
+  } else {
+    MealItems = <p>No meals available.</p>;
+  }
 
-  return <section className=" max-w-4xl mx-auto my-4 bg-slate-300 text-black p-5 rounded-md shadow-sm">{MealItems}</section>;
+  return (
+    <section className="max-w-4xl mx-auto my-4 bg-slate-300 text-black p-5 rounded-md shadow-sm">
+      {MealItems}
+    </section>
+  );
 };
 
 export default AvailableMeals;
