@@ -3,7 +3,7 @@ import "./App.css";
 import Cart from "./components/Cart/Cart";
 import Header from "./components/Layouts/Header";
 import Meals from "./components/Meals/Meals";
-import CartContextProvider from './store/CartContextProvider'
+import CartContextProvider from "./store/CartContextProvider";
 
 function App() {
   const [isCartVisible, setCartVisibility] = useState(false);

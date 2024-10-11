@@ -2,7 +2,7 @@ import { BookLoader } from "react-awesome-loaders";
 
 const MealLoader = (props) => {
   return (
-    <section className="">
+    <section className="flex justify-center">
       <BookLoader
         background={"linear-gradient(135deg, #6066FA, #4645F6)"}
         desktopSize={"100px"}

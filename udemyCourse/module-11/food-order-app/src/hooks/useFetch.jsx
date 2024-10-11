@@ -7,7 +7,7 @@ const useFetch = (url, config) => {
 
   const stableConfig = useMemo(
     () => config,
-    [config.method, config.headers, config.body]
+    [config.method, config.headers, config.body],
   );
 
   useEffect(() => {
@@ -20,7 +20,6 @@ const useFetch = (url, config) => {
           headers: stableConfig.headers || {},
           body: JSON.stringify(stableConfig.body) || null,
         });
-
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

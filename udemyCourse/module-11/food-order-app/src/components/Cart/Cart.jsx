@@ -5,17 +5,18 @@ import CartContext from "../../store/CartContext";
 import { IconContext } from "react-icons";
 import { IoAddCircleSharp } from "react-icons/io5";
 import { AiFillMinusCircle } from "react-icons/ai";
+import CheckoutForm from "../checkout/checkOut";
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
   const removeItemHandler = (id) => {
     cartCtx.removeItem(id);
-  }
+  };
   const addItemHandler = (item) => {
-   const fixAmt = {...item, amount: 1}
-    console.log(fixAmt)
+    const fixAmt = { ...item, amount: 1 };
+    console.log(fixAmt);
     cartCtx.addItem(fixAmt);
-  }
+  };
   const cartItems = (
     <ul>
       <IconContext.Provider
@@ -33,10 +34,16 @@ const Cart = (props) => {
               </p>
             </div>
             <div className="item-actions flex cursor-pointer">
-              <p onClick={()=> removeItemHandler(item.id)} className="minus text-yellow-500 mx-2">
+              <p
+                onClick={() => removeItemHandler(item.id)}
+                className="minus text-yellow-500 mx-2"
+              >
                 <AiFillMinusCircle />
               </p>
-              <p onClick={()=> addItemHandler(item)} className="plus text-teal-800">
+              <p
+                onClick={() => addItemHandler(item)}
+                className="plus text-teal-800"
+              >
                 <IoAddCircleSharp />
               </p>
             </div>
@@ -51,6 +58,9 @@ const Cart = (props) => {
       <div className={classes.total}>
         <span>Total Amount</span>
         <span>{totalAmount}</span>
+      </div>
+      <div className="checkout-form">
+        <CheckoutForm />
       </div>
       <div className={classes.actions}>
         <button onClick={props.closeCart} className={classes["button--alt"]}>

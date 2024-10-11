@@ -4,13 +4,21 @@ import useFetch from "../../../hooks/useFetch";
 import MealLoader from "../../Loader/MealLoader"; // Assuming this is the correct import
 
 const AvailableMeals = () => {
-  const { data, loading: isLoading, error } = useFetch("https://react-http-655f1-default-rtdb.firebaseio.com/meals.json", { method: "GET" });
-
+  const {
+    data,
+    loading: isLoading,
+    error,
+  } = useFetch(
+    "https://react-http-655f1-default-rtdb.firebaseio.com/meals.json",
+    { method: "GET" },
+  );
   let MealItems;
   if (isLoading) {
-    return (<MealLoader/>);
+    return <MealLoader />;
   } else if (error) {
-    MealItems = <p className="text-red-500">Error fetching meals: {error.message}</p>;
+    MealItems = (
+      <p className="text-red-700 text-center">Error fetching meals: {error}</p>
+    );
   } else if (data && data.length > 0) {
     MealItems = data.map((meal) => (
       <IndividualMeal
