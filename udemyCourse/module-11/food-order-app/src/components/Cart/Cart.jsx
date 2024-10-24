@@ -1,12 +1,13 @@
 import Modal from "../UI/Modal";
 import classes from "./Cart.module.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import CartContext from "../../store/CartContext";
 import { IconContext } from "react-icons";
 import { IoAddCircleSharp } from "react-icons/io5";
 import { AiFillMinusCircle } from "react-icons/ai";
 import CheckoutForm from "../checkout/checkOut";
 const Cart = (props) => {
+const [isExpanded, setIsExpanded] = useState(false);
   const cartCtx = useContext(CartContext);
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
   const removeItemHandler = (id) => {
@@ -17,6 +18,11 @@ const Cart = (props) => {
     console.log(fixAmt);
     cartCtx.addItem(fixAmt);
   };
+  const expandHandler = (e) => {
+    e.preventDefault; 
+    setIsExpanded(true);
+  }
+  const Button = (<button className="bg-transparent border-teal-500 text-black hover:bg-red-700" onClick={expandHandler}>Complete Checkout</button>);
   const cartItems = (
     <ul>
       <IconContext.Provider
@@ -60,7 +66,7 @@ const Cart = (props) => {
         <span>{totalAmount}</span>
       </div>
       <div className="checkout-form">
-        <CheckoutForm />
+      {isExpanded ? <CheckoutForm /> : Button}
       </div>
       <div className={classes.actions}>
         <button onClick={props.closeCart} className={classes["button--alt"]}>
