@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 const CheckoutForm = (props) => {
+<<<<<<< HEAD
   const nameInputRef = useRef();
   const emailInputRef = useRef();
   const phoneInputRef = useRef();
@@ -35,6 +36,22 @@ const CheckoutForm = (props) => {
         <div className="relative z-0 w-full mb-5 group">
           <input
             ref={emailInputRef}
+=======
+  const handleFormSUbmission = (e) => {
+    e.preventDefault;
+  };
+  const emailChangeHandler = () => {}
+  const emailBlurHandler = () => {}
+  const nameChangeHandler = () => {}
+  const nameBlurHandler = () => {}
+  return (
+    <>
+      <form onSubmit={handleFormSUbmission} class="max-w-md mx-auto">
+        <div class="relative z-0 w-full mb-5 group">
+          <input
+            onChange={emailChangeHandler}
+            onBlur={emailBlurHandler}
+>>>>>>> fd9adf91d74ece0e2b2c829f1fc3d367953f2476
             type="email"
             name="floating_email"
             id="floating_email"
@@ -49,10 +66,19 @@ const CheckoutForm = (props) => {
             Email address
           </label>
         </div>
+<<<<<<< HEAD
         <div className="w-full mb-5 group">
           <div className="relative z-0 w-full mb-5 group">
             <input
               ref={nameInputRef}
+=======
+
+        <div class="grid md:grid-cols-2 md:gap-6">
+          <div class="relative z-0 w-full mb-5 group">
+            <input
+              onChange={nameChangeHandler}
+              onBlur={nameBlurHandler}
+>>>>>>> fd9adf91d74ece0e2b2c829f1fc3d367953f2476
               type="text"
               name="floating_full_name"
               id="floating_full_name"
@@ -87,6 +113,7 @@ const CheckoutForm = (props) => {
               Phone number (123-456-7890)
             </label>
           </div>
+<<<<<<< HEAD
           <div className="relative z-0 w-full mb-5 group">
             <input
               ref={postInputRef}
@@ -104,6 +131,8 @@ const CheckoutForm = (props) => {
               Postal Code
             </label>
           </div>
+=======
+>>>>>>> fd9adf91d74ece0e2b2c829f1fc3d367953f2476
         </div>
         <button
           type="submit"
