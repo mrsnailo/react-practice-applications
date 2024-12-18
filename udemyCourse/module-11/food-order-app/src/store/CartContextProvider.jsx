@@ -57,11 +57,13 @@ const CartContextProvider = (props) => {
   const removeItemFromCart = (id) => {
     dispatchAction({ type: "REMOVE", id: id });
   };
+  const chekoutAction = false;
   const cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItemToCart,
     removeItem: removeItemFromCart,
+    isCheckout: chekoutAction,
   };
   return (
     <CartContext.Provider value={cartContext}>

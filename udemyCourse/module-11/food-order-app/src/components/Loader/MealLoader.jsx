@@ -1,15 +1,13 @@
-import { BookLoader } from "react-awesome-loaders";
+import { BeatLoader } from "react-spinners";
 
-const MealLoader = (props) => {
+const MealLoader = () => {
   return (
-    <section className="flex justify-center">
-      <BookLoader
-        background={"linear-gradient(135deg, #6066FA, #4645F6)"}
-        desktopSize={"100px"}
-        mobileSize={"80px"}
-        textColor={"#4645F6"}
-      />
-    </section>
+    <>
+      <div className="flex justify-center m-5">
+      <BeatLoader size="20px" color="#348deb" />
+      </div>
+    </>
+     
   );
 };
 

@@ -6,8 +6,9 @@ import { IconContext } from "react-icons";
 import { IoAddCircleSharp } from "react-icons/io5";
 import { AiFillMinusCircle } from "react-icons/ai";
 import CheckoutForm from "../checkout/checkOut";
+import { Flex } from "@aws-amplify/ui-react";
 const Cart = (props) => {
-const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const cartCtx = useContext(CartContext);
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
   const removeItemHandler = (id) => {
@@ -19,10 +20,17 @@ const [isExpanded, setIsExpanded] = useState(false);
     cartCtx.addItem(fixAmt);
   };
   const expandHandler = (e) => {
-    e.preventDefault; 
+    e.preventDefault;
     setIsExpanded(true);
-  }
-  const Button = (<button className="bg-transparent border-teal-500 text-black hover:bg-red-700" onClick={expandHandler}>Complete Checkout</button>);
+  };
+  const Button = (
+    <button
+      className="bg-transparent border-teal-500 text-black hover:bg-red-700"
+      onClick={expandHandler}
+    >
+      Complete Checkout
+    </button>
+  );
   const cartItems = (
     <ul>
       <IconContext.Provider
@@ -65,15 +73,17 @@ const [isExpanded, setIsExpanded] = useState(false);
         <span>Total Amount</span>
         <span>{totalAmount}</span>
       </div>
-      <div className="checkout-form">
-      {isExpanded ? <CheckoutForm /> : Button}
-      </div>
-      <div className={classes.actions}>
-        <button onClick={props.closeCart} className={classes["button--alt"]}>
+      <div className={`${classes.action} flex justify-end gap-2`}>
+        <button
+          onClick={props.closeCart}
+          className="bg-transparent border-teal-500 text-black hover:bg-red-700"
+        >
           Close
         </button>
-        <button className={classes.button}>Order</button>
+        <div className="checkout-form">{!isExpanded && Button}</div>
       </div>
+      {/* checkout form */}
+      {isExpanded && <CheckoutForm />}
     </Modal>
   );
 };

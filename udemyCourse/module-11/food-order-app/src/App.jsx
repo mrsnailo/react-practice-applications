@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {toast, Toaster} from "react-hot-toast";
 import "./App.css";
 import Cart from "./components/Cart/Cart";
 import Header from "./components/Layouts/Header";
@@ -8,16 +9,17 @@ import CartContextProvider from "./store/CartContextProvider";
 function App() {
   const [isCartVisible, setCartVisibility] = useState(false);
 
-  const openCart = (props) => {
+  const openCart = () => {
     setCartVisibility(true);
   };
 
-  const closeCart = (props) => {
+  const closeCart = () => {
     setCartVisibility(false);
   };
   return (
     <CartContextProvider>
       <Header showCart={openCart} />
+      <Toaster />
       <main>
         <Meals />
         {isCartVisible && <Cart closeCart={closeCart} />}

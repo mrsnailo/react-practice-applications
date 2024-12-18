@@ -21,6 +21,7 @@ const MealItemForm = (props) => {
       return;
     }
 
+    // eslint-disable-next-line react/prop-types
     props.onAddToCart(enteredAmountNUmber);
   };
   return (
@@ -29,6 +30,7 @@ const MealItemForm = (props) => {
         ref={amountInputRef}
         label="Amount"
         input={{
+          // eslint-disable-next-line react/prop-types
           id: "amount_" + props.id,
           type: "number",
           min: "1",

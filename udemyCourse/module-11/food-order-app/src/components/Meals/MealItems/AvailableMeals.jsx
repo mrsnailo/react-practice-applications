@@ -1,4 +1,3 @@
-import Card from "../../UI/Card";
 import IndividualMeal from "./IndividualMeal";
 import useFetch from "../../../hooks/useFetch";
 import MealLoader from "../../Loader/MealLoader"; // Assuming this is the correct import
@@ -14,7 +13,7 @@ const AvailableMeals = () => {
   );
   let MealItems;
   if (isLoading) {
-    return <MealLoader />;
+    return <MealLoader/>;
   } else if (error) {
     MealItems = (
       <p className="text-red-700 text-center">Error fetching meals: {error}</p>
