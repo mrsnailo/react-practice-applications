@@ -98,10 +98,7 @@ const CheckoutForm = (props) => {
     setPostTouchStatus(true);
   };
 
-  const handleFormSUbmission = (e) => {
-    e.preventDefault();
-  };
-
+  
   const nameInputStyles = `
   block text-slate-900 py-2.5 px-0 w-full text-sm border-0 border-b-2 appearance-none
   dark:border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer
@@ -140,6 +137,7 @@ const CheckoutForm = (props) => {
 `;
 
   useEffect(() => {
+    // validate each input individually
     const nameInvalid = nameIsTouched && !inputAndValidity.name.validity;
     const emailInvalid = emailIsTouched && !inputAndValidity.email.validity;
     const phoneInvalid = phoneIsTouched && !inputAndValidity.phone.validity;
@@ -165,7 +163,7 @@ const CheckoutForm = (props) => {
       default:
         break;
     }
-    
+    // valiating whole form 
     const formIsValid =
       inputAndValidity.name.validity &&
       inputAndValidity.email.validity &&
@@ -175,6 +173,18 @@ const CheckoutForm = (props) => {
 
     setFormValidity(formIsValid);
   }, [emailIsTouched, inputAndValidity, nameIsTouched, phoneIsTouched, postIsTouched]);
+
+  // form submit handler 
+  const handleFormSUbmission = (e) => {
+    e.preventDefault();
+    const userData = {
+      name: inputAndValidity.name.value,
+      email: inputAndValidity.email.value,
+      phone: inputAndValidity.phone.value,
+      post: inputAndValidity.post.value
+    }
+    props.onConfirmOrder(userData);
+  };
 
   return (
     <>
