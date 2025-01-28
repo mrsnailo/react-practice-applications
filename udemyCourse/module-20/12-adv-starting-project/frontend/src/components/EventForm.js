@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
 
 function EventForm({ method, event }) {
   const navigate = useNavigate();
@@ -8,7 +8,7 @@ function EventForm({ method, event }) {
   }
 
   return (
-    <form className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+    <Form method='post' className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
       <div className="mb-4">
         <label htmlFor="title" className="block text-gray-700 text-sm font-bold mb-2">
           Title
@@ -76,7 +76,7 @@ function EventForm({ method, event }) {
           Save
         </button>
       </div>
-    </form>
+    </Form>
   );
 }
 

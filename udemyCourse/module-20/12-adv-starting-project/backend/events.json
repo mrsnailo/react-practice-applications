@@ -1,11 +1,1 @@
-{
-  "events": [
-    {
-      "id": "e1",
-      "title": "A dummy event",
-      "date": "2023-02-22",
-      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-      "description": "Join this amazing event and connect with fellow developers."
-    }
-  ]
-}
+{"events":[{"title":"এটা একটা নতুন ইভেন্ট ","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF4TnQ4Th3c3S6jO8LYaSnnDztkvkuvuC_uQ&s","date":"2025-01-23","description":"This is where brands get business done, meet new partners and where the industry’s sharpest minds take the stage to unveil their latest releases and boldest breakthroughs.\n\nOwned and produced by the Consumer Technology Association (CTA)®, CES is the only trade show that showcases the entire tech landscape at one event.\n\nCES showcases companies including manufacturers, developers and suppliers of consumer technology hardware, content, technology delivery systems and more. It also includes a conference program where the world's business leaders and pioneering thinkers address the industry's most relevant issues.\n","id":"0f655164-bbd1-4994-bb6d-7c7c769f4fb1"},{"title":"Github action failing Because of puppeteer.","image":"https://technext24.com/wp-content/uploads/2020/10/events.jpeg","date":"2012-12-31","description":"Lorem ipmsum dolor sit amet, Lorem ipmsum dolor sit amet\nLorem ipmsum dolor sit ametLorem ipmsum dolor sit ametLorem ipmsum dolor sit amet","id":"a72e021e-f225-4860-97e8-736c4a6a9ecd"},{"title":"Tech event in arab!","image":"https://technext24.com/wp-content/uploads/2020/10/events.jpeg","date":"2022-12-31","description":"Technological breakthroughs will continue to lead to innovations that will break down barriers, and business owners cannot afford to miss out on any chance that will help them take their businesses to greater heights. \n\nWith the rising use of technology across a wide range of industrial sectors, it has become critical for all key players and tech enthusiasts to stay informed of the rapidly changing technology landscape in order to stay afloat. \n\nTech Events and conferences are some of the most effective yet underappreciated ways for businesses to share information and network.","id":"532b917f-bb98-49d3-a496-eee1c8878c7a"},{"id":"e1","title":"A dummy event","date":"2023-02-22","image":"https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg","description":"Join this amazing event and connect with fellow developers."}]}
