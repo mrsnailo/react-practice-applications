@@ -21,4 +21,8 @@ app.use((error, req, res, next) => {
   res.status(status).json({ message: message });
 });
 
-app.listen(8080);
+app.listen(8080, (error)=>{
+  if (error){console.log("server error")};
+  console.log("server running on port 8080")
+});
+

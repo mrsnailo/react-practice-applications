@@ -1,8 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useSubmit } from "react-router-dom";
 
 function EventItem({ event }) {
+  const submit = useSubmit();
   function startDeleteHandler() {
-    // Handle delete logic here
+    const proceed = window.confirm("Are you sure?");
+    if (proceed) {
+      submit(null, {method: "DELETE"})
+    }
   }
 
   return (

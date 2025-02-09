@@ -1,4 +1,4 @@
-import { useRouteError, useRouteLoaderData } from 'react-router-dom';
+import { useRouteLoaderData } from 'react-router-dom';
 import EventForm from '../components/EventForm'
 function EditEventPage(params) {
 
@@ -6,7 +6,7 @@ function EditEventPage(params) {
   return (
     <>
       <h2 className="text-center font-bold underline">Edit Event</h2>
-      <EventForm event={data.event}/>
+      <EventForm method="PATCH" event={data.event}/>
     </>
   );
 }
